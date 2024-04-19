@@ -6,6 +6,9 @@
 FROM golang:1.19.4 as build_context
 
 ENV OUTDIR=/out
+ENV CGO_ENABLED=0
+ENV GOOS=linux
+ENV GOARCH=amd64
 RUN mkdir -p ${OUTDIR}/usr/local/bin/
 
 WORKDIR /workspace
